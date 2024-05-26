@@ -1,11 +1,11 @@
 'use client';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import { useToast } from './ui/use-toast';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import SendMessageForm from '@/components/forms/auth/SendMessageForm';
 import { useParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
 import MessagesSentByMeList from './MessagesSentByMeList';
+import SendMessageForm from '@/components/forms/auth/SendMessageForm';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default function ProfileContent({ userData }: { userData: UserProfileData }) {
 	const { toast } = useToast();

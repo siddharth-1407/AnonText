@@ -34,7 +34,7 @@ async function MessagesList({ messages }: { messages: MessageCard[] }) {
 function MessagesListFallBack() {
 	return (
 		<div className='grid place-items-center gap-2 pt-20 lg:pt-36'>
-			<span className='text-2xl md:text-4xl font-extrabold text-gray-950/50 dark:text-gray-600'>You've no messages</span>
+			<span className='text-2xl md:text-4xl font-extrabold text-gray-950/50 dark:text-gray-600'>You&apos;ve no messages</span>
 			<span className='text-lg md:text-2xl font-extrabold text-gray-950/50 dark:text-gray-600'>Share your profile link</span>
 		</div>
 	);

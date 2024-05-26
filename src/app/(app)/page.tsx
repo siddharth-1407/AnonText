@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import StickyScroll from '@/components/StickyScroll';
 import AcceptMessagesCarousel from '@/components/AcceptMessagesCarousel';
 
-export default function page() {
+export default function Page() {
 	const scrollRef = useRef<HTMLElement>(null);
 	return (
 		<>
@@ -55,7 +55,7 @@ export default function page() {
 								Personal Dashboard
 							</h2>
 							<p className='text-[clamp(1rem,4vw,1.25rem)] sm:text-xl md:text-base md:font-medium lg:font-normal lg:text-lg 2xl:text-xl'>
-								View all the messages you've received in one place, whether anonymous or not. Stay organized and in control.
+								View all the messages you&apos;ve received in one place, whether anonymous or not. Stay organized and in control.
 							</p>
 						</div>
 					</div>

@@ -1,17 +1,17 @@
 'use client';
 import * as z from 'zod';
 import Link from 'next/link';
-import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import React, { useEffect, useState } from 'react';
+import { Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useSession, signIn } from 'next-auth/react';
+import { useToast } from '@/components/ui/use-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signInSchema } from '@/Schemas/signin.schema';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { useToast } from '@/components/ui/use-toast';
 
 export default function SignInForm(): React.JSX.Element {
 	const router = useRouter();
@@ -134,7 +134,7 @@ export default function SignInForm(): React.JSX.Element {
 						)}
 					</Button>
 					<p className='py-2 text-center'>
-						Don't have an account?{' '}
+						Don't have an account?&nbsp;
 						<Link className='font-medium hover:underline' href={'/sign-up'}>
 							Sign up
 						</Link>

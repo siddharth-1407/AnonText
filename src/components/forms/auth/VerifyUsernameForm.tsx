@@ -112,7 +112,7 @@ export default function VerifyUsernameForm(): React.JSX.Element {
 						disabled={resentCode || Boolean(counter)}
 						onClick={resentVerifyCode}
 						className='w-full text-center text-sm hover:underline disabled:no-underline disabled:cursor-not-allowed disabled:text-white/50'>
-						Didn't receive the code? Resent!{` `}
+						Didn&apos;t receive the code? Resent!&nbsp;
 						{Boolean(counter) && <span className='text-sm  text-center'>Try again in {counter} seconds</span>}
 					</button>
 				</form>
