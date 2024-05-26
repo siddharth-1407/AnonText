@@ -13,16 +13,19 @@ export const metadata: Metadata = {
 
 const whyJoin = [
 	{
+		id: 1,
 		title: 'Stay Anonymous or Not',
 		description: 'You decide if you want to reveal your identity or keep it hidden.',
 		customStyles: 'after:bg-pink-500 dark:after:bg-pink-600',
 	},
 	{
+		id: 1,
 		title: 'Control Your Privacy',
 		description: 'Easily toggle your availability to receive messages and manage your profile settings.',
 		customStyles: 'after:bg-blue-400 dark:after:bg-blue-600',
 	},
 	{
+		id: 1,
 		title: 'Organize Your Messages',
 		description: "Keep track of all the messages you've received and sent in one convenient place.",
 		customStyles: 'after:bg-green-400 dark:after:bg-green-600',
@@ -42,9 +45,9 @@ export default function page(): React.JSX.Element {
 					<div className='max-w-lg flex flex-col gap-4'>
 						<p className='text-[clamp(1.25rem,2vw,1.75rem)] font-bold'>Why join?</p>
 						<ul className='grid gap-3 2xl:gap-4'>
-							{whyJoin.map((item: { title: string; description: string; customStyles: string }, index: number) => {
+							{whyJoin.map((item: { id: number; title: string; description: string; customStyles: string }, index: number) => {
 								return (
-									<li>
+									<li key={item.id}>
 										<p className='group'>
 											<span
 												className={`px-1 z-10 text-[clamp(1rem,2vw,1.135rem)] font-semibold relative after:absolute after:left-0 after:top-0 after:h-full after:w-0 ${item.customStyles} group-hover:after:w-full after:-skew-x-12 after:-z-10 after:transition-all`}>

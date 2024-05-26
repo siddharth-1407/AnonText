@@ -3,12 +3,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Autoplay from 'embla-carousel-autoplay';
 import StickyScroll from '@/components/StickyScroll';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import AcceptMessagesCarousel from '@/components/AcceptMessagesCarousel';
 
 export default function page() {
-	const scrollRef = useRef<HTMLDivElement>(null);
+	const scrollRef = useRef<HTMLElement>(null);
 	return (
 		<>
 			<StickyScroll scrollRef={scrollRef} />
@@ -111,55 +110,5 @@ export default function page() {
 				</motion.section>
 			</main>
 		</>
-	);
-}
-
-function AcceptMessagesCarousel() {
-	return (
-		<Carousel
-			plugins={[
-				Autoplay({
-					delay: 2000,
-				}),
-			]}
-			opts={{
-				align: 'center',
-				loop: true,
-			}}>
-			<CarouselContent>
-				<CarouselItem>
-					<Image
-						className='w-full dark:hidden'
-						src={'/home/small/profile_is_accepting_messages_small-light.jpg'}
-						width={1000}
-						height={500}
-						alt=''
-					/>
-					<Image
-						className='flex-1 w-full hidden dark:block'
-						src={'/home/small/profile_is_accepting_messages_small-dark.jpg'}
-						width={1000}
-						height={500}
-						alt=''
-					/>
-				</CarouselItem>
-				<CarouselItem>
-					<Image
-						className='w-full dark:hidden'
-						src={'/home/small/profile_not_accepting_messages_small-dark.jpg'}
-						width={1000}
-						height={500}
-						alt=''
-					/>
-					<Image
-						className='flex-1 w-full hidden dark:block'
-						src={'/home/small/profile_not_accepting_messages_small-light.jpg'}
-						width={1000}
-						height={500}
-						alt=''
-					/>
-				</CarouselItem>
-			</CarouselContent>
-		</Carousel>
 	);
 }

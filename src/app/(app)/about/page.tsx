@@ -15,31 +15,37 @@ const aboutContent = {
 			heading: 'What We Offer',
 			points: [
 				{
+					id: 1,
 					title: 'Anonymous Messaging',
 					content:
 						'Send messages anonymously or choose to reveal your identity, giving you the freedom to communicate in the way that feels right for you.',
 				},
 				{
+					id: 2,
 					title: 'Private Conversations',
 					content:
 						'All messages are private and can only be seen by the sender and the recipient, ensuring your conversations remain confidential.',
 				},
 				{
+					id: 3,
 					title: 'Single-Reply Interaction',
 					content:
 						'Users can ask a question or give feedbacks, and the recipient can provide one reply, keeping interactions focused and concise',
 				},
 				{
+					id: 4,
 					title: 'Personalized Profiles',
 					content:
 						'Customize your profile by uploading an avatar making it other to identify you. Users can also share their profile links.',
 				},
 				{
+					id: 5,
 					title: 'Message Control',
 					content:
 						'Users can decide whether or not they are accepting messages, providing flexibility and control over their communication.',
 				},
 				{
+					id: 6,
 					title: 'Show Off Your Popularity',
 					content:
 						'Proudly display the number of messages you have received on your profile to show off your engagement and popularity within the app.',
@@ -51,16 +57,19 @@ const aboutContent = {
 			heading: 'Why Choose AnonText?',
 			points: [
 				{
+					id: 1,
 					title: 'Safety and Privacy',
 					content:
 						'We prioritize your privacy and security. Our platform ensures that your conversations remain between you and the person you’re communicating with.',
 				},
 				{
+					id: 2,
 					title: 'User-Friendly Interface',
 					content:
 						'Our app is designed to be intuitive and easy to use, making it simple for you to send messages, update your profile, and manage your account settings.',
 				},
 				{
+					id: 3,
 					title: 'Flexibility',
 					content:
 						'Whether you want to remain anonymous or share your identity, AnonText gives you the flexibility to choose how you communicate.',
@@ -95,7 +104,11 @@ export default function page() {
 				<h1 className='text-5xl md:text-6xl font-extrabold pb-20'>{aboutContent.title}</h1>
 				<div className='grid gap-8'>
 					{aboutContent.sections.map((section) => {
-						return <AboutSection data={section} />;
+						return (
+							<React.Fragment key={section.id}>
+								<AboutSection data={section} />
+							</React.Fragment>
+						);
 					})}
 				</div>
 			</main>
@@ -107,7 +120,7 @@ type AboutSection = {
 	id: number;
 	heading: string;
 	text?: string;
-	points?: { title: string; content: string }[];
+	points?: { id: number; title: string; content: string }[];
 };
 
 export function AboutSection({ data }: { data: AboutSection }) {
@@ -119,7 +132,7 @@ export function AboutSection({ data }: { data: AboutSection }) {
 				<div className='grid gap-4'>
 					{data.points?.map((item, i) => {
 						return (
-							<div className='flex-inline pl-4 '>
+							<div key={item.id} className='flex-inline pl-4 '>
 								<span className='font-extrabold sm:text-xl'>{i + 1}. </span>
 								<h3 className='font-semibold inline sm:text-xl'>{item.title} : </h3>
 								<p className=' inline sm:text-lg'>{item.content}</p>

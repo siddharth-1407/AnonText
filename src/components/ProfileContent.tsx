@@ -5,8 +5,6 @@ import { useToast } from './ui/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import SendMessageForm from '@/components/forms/auth/SendMessageForm';
 import { useParams } from 'next/navigation';
-import MessageCard from './MessageCard';
-import SentByMeCard from './SentByMeCard';
 import MessagesSentByMeList from './MessagesSentByMeList';
 
 export default function ProfileContent({ userData }: { userData: UserProfileData }) {

@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-export default function StickyScroll({ scrollRef }: { scrollRef: React.RefObject<HTMLDivElement> }) {
+export default function StickyScroll({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
 	const { scrollYProgress } = useScroll({ target: scrollRef, offset: ['start', 'end'] });
 	const scaleX = useSpring(scrollYProgress, {
 		stiffness: 100,
