@@ -1,13 +1,13 @@
 'use client';
-import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
-import { AlignJustify, Home, LayoutDashboard, Library, LogOut, Settings2, User } from 'lucide-react';
-import ToggleTheme from './ToggleTheme';
+import Link from 'next/link';
 import { Session } from 'next-auth';
 import { Button } from './ui/button';
-import { useRouter } from 'next/navigation';
-import { signOut } from 'next-auth/react';
-import Link from 'next/link';
+import ToggleTheme from './ToggleTheme';
 import { PTSans } from './NavBarDesktop';
+import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTrigger } from '@/components/ui/sheet';
+import { AlignJustify, Home, LayoutDashboard, Library, LogOut, Settings2, User } from 'lucide-react';
 
 const navLinksResponsive = [
 	{
@@ -45,7 +45,7 @@ export default function NavbarResponsive({ session }: { session: Session | null 
 							<AlignJustify />
 						</Button>
 					</SheetTrigger>
-					<SheetContent hideClose={true} side={'left'}>
+					<SheetContent side={'left'}>
 						<SheetHeader>
 							<Link
 								href={'/'}
