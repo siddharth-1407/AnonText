@@ -52,3 +52,10 @@ type SendReplyFormProps = {
 type NavLinkProps = {
 	link: { id: number; title: string; path: string; onAuth: boolean };
 };
+
+type AboutSection = {
+	id: number;
+	heading: string;
+	text?: string;
+	points?: { id: number; title: string; content: string }[];
+};
