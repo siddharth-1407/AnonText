@@ -134,7 +134,7 @@ export default function SignInForm(): React.JSX.Element {
 						)}
 					</Button>
 					<p className='py-2 text-center'>
-						Don't have an account?&nbsp;
+						Don&apos;t have an account?&nbsp;
 						<Link className='font-medium hover:underline' href={'/sign-up'}>
 							Sign up
 						</Link>
