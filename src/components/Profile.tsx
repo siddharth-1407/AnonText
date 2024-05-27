@@ -21,7 +21,7 @@ export default async function Profile({ data }: { data: UserProfileData }) {
 					<Card className='dark:bg-gray-950 flex-1 max-w-sm shadow-sm'>
 						<CardHeader className='flex flex-row items-end gap-2'>
 							<p className='font-medium'>
-								FeedBacks : <span className='font-normal'>{numberFormatter(data?.messageCount || 0)}</span>
+								Messages : <span className='font-normal'>{numberFormatter(data?.messageCount || 0)}</span>
 							</p>
 						</CardHeader>
 					</Card>
