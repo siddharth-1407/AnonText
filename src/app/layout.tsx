@@ -1,11 +1,11 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
-import AuthProvider from '@/context/AuthProvider';
 import Navbar from '@/components/Navbar';
+import AuthProvider from '@/context/AuthProvider';
 import { Toaster } from '@/components/ui/toaster';
 import ThemeProvider from '@/context/ThemeProvider';
-
+import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -31,6 +31,7 @@ export default function RootLayout({
 							{children}
 						</div>
 						<Toaster />
+						<Analytics />
 					</ThemeProvider>
 				</body>
 			</html>
