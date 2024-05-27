@@ -35,7 +35,6 @@ const navLinksResponsive = [
 
 export default function NavbarResponsive({ session }: { session: Session | null }) {
 	const router = useRouter();
-
 	return (
 		<div className='container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl mx-auto backdrop-blur-sm flex md:hidden justify-between items-center'>
 			<div className='flex gap-4'>
@@ -84,42 +83,44 @@ export default function NavbarResponsive({ session }: { session: Session | null 
 									}
 								})}
 							</ul>
-							<ul className='grid gap-4'>
-								<li>
-									<SheetClose asChild>
-										<Button
-											className='w-full flex gap-3 justify-start'
-											onClick={() => router.push(`/p/${session?.user.username}`)}>
-											<span>
-												<User className='w-4' />
-											</span>
-											<span>Profile</span>
-										</Button>
-									</SheetClose>
-								</li>
-								<li>
-									<SheetClose asChild>
-										<Button className='w-full flex gap-3 justify-start' onClick={() => router.push(`/settings`)}>
-											<span>
-												<Settings2 className='w-4' />
-											</span>
-											<span>Settings</span>
-										</Button>
-									</SheetClose>
-								</li>
-								<li>
-									<SheetClose asChild>
-										<Button
-											className='w-full bg-red-500/60 hover:bg-red-500/50 text-white font-medium flex gap-3 justify-start'
-											onClick={() => signOut()}>
-											<span>
-												<LogOut className='w-4' />
-											</span>
-											<span className='-translate-y-0.5'>Logout</span>
-										</Button>
-									</SheetClose>
-								</li>
-							</ul>
+							{session && session?.user && (
+								<ul className='grid gap-4'>
+									<li>
+										<SheetClose asChild>
+											<Button
+												className='w-full flex gap-3 justify-start'
+												onClick={() => router.push(`/p/${session?.user.username}`)}>
+												<span>
+													<User className='w-4' />
+												</span>
+												<span>Profile</span>
+											</Button>
+										</SheetClose>
+									</li>
+									<li>
+										<SheetClose asChild>
+											<Button className='w-full flex gap-3 justify-start' onClick={() => router.push(`/settings`)}>
+												<span>
+													<Settings2 className='w-4' />
+												</span>
+												<span>Settings</span>
+											</Button>
+										</SheetClose>
+									</li>
+									<li>
+										<SheetClose asChild>
+											<Button
+												className='w-full bg-red-500/60 hover:bg-red-500/50 text-white font-medium flex gap-3 justify-start'
+												onClick={() => signOut()}>
+												<span>
+													<LogOut className='w-4' />
+												</span>
+												<span className='-translate-y-0.5'>Logout</span>
+											</Button>
+										</SheetClose>
+									</li>
+								</ul>
+							)}
 						</nav>
 					</SheetContent>
 				</Sheet>

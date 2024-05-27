@@ -34,8 +34,8 @@ const whyJoin = [
 
 export default function page(): React.JSX.Element {
 	return (
-		<div className='h-full flex-1 flex items-center container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl mx-auto '>
-			<main className='relative overflow-hidden border-2 rounded-xl border-primary/05 flex gap-6 flex-1 lg:p-16 xl:p-20'>
+		<div className='h-full flex-1 flex items-center sm:container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl sm:mx-auto '>
+			<main className='relative overflow-hidden border-2 rounded-xl border-primary/05 flex gap-6 flex-1 md:py-10 lg:py-0 lg:p-16 xl:p-20'>
 				<Meteors number={40} />
 				<aside className='z-10 flex-1 hidden lg:grid justify-center gap-10'>
 					<div className='max-w-lg'>

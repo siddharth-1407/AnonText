@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function Page() {
 	return (
-		<div className='h-full flex-1 flex items-center container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl mx-auto '>
+		<div className='h-full flex-1 flex items-center sm:container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl mx-auto '>
 			<div className='relative overflow-hidden border-2 rounded-xl border-primary/05 flex gap-6 flex-1'>
 				<AuroraBackground className='flex-1 w-full h-full dark:bg-gray-950'>
-					<section className='z-10 flex-1 grid place-items-center lg:p-16 xl:p-20'>
+					<section className='z-10 flex-1 grid place-items-center md:my-10 lg:my-0 lg:p-16 xl:p-20'>
 						<SignInForm />
 					</section>
 				</AuroraBackground>
