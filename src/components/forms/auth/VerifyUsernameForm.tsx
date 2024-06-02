@@ -53,7 +53,6 @@ export default function VerifyUsernameForm(): React.JSX.Element {
 				form.setError('verifyCode', { message: _data?.message || 'Verification failed!' });
 			}
 		} catch (error) {
-			console.error('Error verifying user: ', error);
 			toast({ description: 'Verification Failed!', variant: 'destructive' });
 		} finally {
 			setIsSubmitting(false);

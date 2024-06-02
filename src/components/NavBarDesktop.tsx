@@ -1,14 +1,15 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import ToggleTheme from './ToggleTheme';
-import ProfilePopOver from './ProfilePopOver';
-import { Session } from 'next-auth';
 import Link from 'next/link';
-import { AnimatePresence, motion } from 'framer-motion';
+import { Session } from 'next-auth';
+import ToggleTheme from './ToggleTheme';
 import { PT_Sans } from 'next/font/google';
+import { useSession } from 'next-auth/react';
+import ProfilePopOver from './ProfilePopOver';
 import { usePathname } from 'next/navigation';
 import { getUserData } from '@/helpers/GetData';
-import { useSession } from 'next-auth/react';
+import React, { Suspense, useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Skeleton } from './ui/skeleton';
 
 const navLinks = [
 	{
@@ -41,13 +42,17 @@ export default function NavbarDesktop({
 }) {
 	let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 	let [userData, setUserData] = useState<UserProfileData | boolean | null>(null);
+	let [loading, setLoading] = useState<boolean>(true);
+
 	const pathname = usePathname();
 	const { data: session } = useSession();
 	useEffect(() => {
 		async function fetchUserData() {
+			setLoading(true);
 			if (session?.user) {
 				const data: UserProfileData | boolean | null = await getUserData(session?.user?.username!);
 				setUserData(data);
+				setLoading(false);
 			}
 		}
 		fetchUserData();
@@ -115,10 +120,13 @@ export default function NavbarDesktop({
 			</nav>
 			<div className='flex gap-6'>
 				<ToggleTheme />
+
 				{!serverUserData && !userData ? (
 					<Link href={'/sign-in'} className='bg-blue-950 hover:bg-blue-950/95 py-2 px-4 text-white rounded-sm'>
 						Login
 					</Link>
+				) : loading ? (
+					<Skeleton className='w-10 aspect-square rounded-full bg-slate-200 dark:bg-slate-800' />
 				) : (
 					userData && typeof userData !== 'boolean' && <ProfilePopOver data={userData} />
 				)}

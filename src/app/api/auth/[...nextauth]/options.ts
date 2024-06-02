@@ -2,7 +2,13 @@ import dbConnect from '@/lib/dbConnect';
 import UserModel from '@/model/User.model';
 import { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { z } from 'zod';
 
+type Credentials = Record<'identifier' | 'password', string> | undefined;
+const credentialsValidator = z.object({
+	identifier: z.string({ message: 'This fiend is required (identifier)' }),
+	password: z.string({ message: 'This field is required (password)' }),
+});
 const authOptions: NextAuthOptions = {
 	providers: [
 		CredentialsProvider({
@@ -12,19 +18,24 @@ const authOptions: NextAuthOptions = {
 				identifier: { label: 'Identifier', type: 'text' },
 				password: { label: 'Password', type: 'password' },
 			},
-			async authorize(credentials: any): Promise<any> {
+			async authorize(credentials: Credentials): Promise<any> {
 				await dbConnect();
 				try {
+					const result = credentialsValidator.safeParse(credentials);
+					if (!result.success) {
+						const errors = result.error?.format()?._errors?.join(',');
+						throw new Error(JSON.stringify({ message: errors, success: false }));
+					}
 					const user = await UserModel.findOne({
-						$or: [{ email: credentials.identifier }, { username: credentials.identifier }],
+						$or: [{ email: result?.data?.identifier }, { username: result?.data?.identifier }],
 					});
 					if (!user) {
 						throw new Error(JSON.stringify({ message: 'Incorrect credentials', status: false }));
 					}
 					if (!user.isVerified) {
-						throw new Error(JSON.stringify({ message: 'Please verify your account first', status: false, issue:'verification' }));
+						throw new Error(JSON.stringify({ message: 'Please verify your account first', status: false, issue: 'verification' }));
 					}
-					const isPasswordCorrect = await user.isPasswordCorrect(credentials.password);
+					const isPasswordCorrect = await user.isPasswordCorrect(result?.data?.password);
 
 					if (isPasswordCorrect) {
 						return user;
@@ -32,7 +43,6 @@ const authOptions: NextAuthOptions = {
 						throw new Error(JSON.stringify({ message: 'Incorrect Password', status: false }));
 					}
 				} catch (error: any) {
-				
 					throw new Error(error.message);
 				}
 			},

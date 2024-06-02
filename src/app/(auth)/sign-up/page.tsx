@@ -19,13 +19,13 @@ const whyJoin = [
 		customStyles: 'after:bg-pink-500 dark:after:bg-pink-600',
 	},
 	{
-		id: 1,
+		id: 2,
 		title: 'Control Your Privacy',
 		description: 'Easily toggle your availability to receive messages and manage your profile settings.',
 		customStyles: 'after:bg-blue-400 dark:after:bg-blue-600',
 	},
 	{
-		id: 1,
+		id: 3,
 		title: 'Organize Your Messages',
 		description: "Keep track of all the messages you've received and sent in one convenient place.",
 		customStyles: 'after:bg-green-400 dark:after:bg-green-600',
@@ -35,11 +35,11 @@ const whyJoin = [
 export default function page(): React.JSX.Element {
 	return (
 		<div className='h-full flex-1 flex items-center sm:container max-w-screen-md lg:max-w-screen-lg 2xl:max-w-screen-xl sm:mx-auto '>
-			<main className='relative overflow-hidden border-2 rounded-xl border-primary/05 flex gap-6 flex-1 md:py-10 lg:py-0 lg:p-16 xl:p-20'>
+			<main className='relative overflow-hidden border-2 rounded-xl border-primary/05 flex gap-6 flex-1 md:py-10 lg:p-8 xl:p-20'>
 				<Meteors number={40} />
-				<aside className='z-10 flex-1 hidden lg:grid justify-center gap-10'>
+				<aside className='z-10 flex-1 hidden lg:grid justify-center gap-10 '>
 					<div className='max-w-lg'>
-						<h1 className='text-[clamp(1.75rem,3vw,3.2rem)] leading-tight font-bold my-1'>Join the Conversation</h1>
+						<h1 className='text-[clamp(1.75rem,3vw,2.8rem)] leading-tight font-bold my-1'>Join the Conversation</h1>
 						<p className='text-[clamp(1.25rem,2vw,1.3rem)] font-medium my-1'>Sign up now and start connecting anonymously</p>
 					</div>
 					<div className='max-w-lg flex flex-col gap-4'>

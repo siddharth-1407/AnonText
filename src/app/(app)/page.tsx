@@ -18,7 +18,7 @@ export default function Page() {
 							Welcome to <br />
 							AnonText
 						</h1>
-						<p className='text-center text-[clamp(1.125rem,4vw,1.25rem)] sm:text-xl lg:text-[clamp(1.25rem,6vw,1.75rem)] md:max-w-lg lg:max-w-2xl xl:max-w-3xl xl:leading-relaxed font-medium'>
+						<p className='text-center text-[clamp(1.125rem,4vw,1.25rem)] sm:text-xl lg:text-[clamp(1.25rem,6vw,1.75rem)] lg:leading-9 md:max-w-lg lg:max-w-2xl xl:max-w-3xl xl:leading-relaxed font-medium'>
 							Experience a new way to communicate with friends and peers. Stay anonymous or reveal your identity
 						</p>
 						<Link

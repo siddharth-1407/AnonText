@@ -78,7 +78,7 @@ export default function SignUpForm(): JSX.Element {
 		}
 	};
 	return (
-		<div className='w-full max-w-lg p-8 bg-white dark:bg-gray-950 shadow-md dark:shadow-gray-800/25 rounded-lg flex flex-col gap-12 '>
+		<div className='w-full max-w-lg p-8 lg:p-6 2xl:p-8 bg-white dark:bg-gray-950 shadow-md dark:shadow-gray-800/25 rounded-lg flex flex-col gap-12 lg:gap-8 2xl:gap-12'>
 			<h1 className='text-3xl sm:text-5xl font-extrabold text-center'>
 				Welcome
 				<span className='text-xl sm:text-xl block'>Join us today</span>
