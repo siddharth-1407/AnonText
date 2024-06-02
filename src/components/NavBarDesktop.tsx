@@ -52,8 +52,8 @@ export default function NavbarDesktop({
 			if (session?.user) {
 				const data: UserProfileData | boolean | null = await getUserData(session?.user?.username!);
 				setUserData(data);
-				setLoading(false);
 			}
+			setLoading(false);
 		}
 		fetchUserData();
 	}, [session]);
