@@ -59,10 +59,10 @@ export default function ProfileContent({ userData }: { userData: UserProfileData
 					Sent by me
 				</TabsTrigger>
 			</TabsList>
-			<TabsContent value='message-form'>
+			<TabsContent value='message-form' className='mb-8'>
 				<SendMessageForm isLoading={isLoading} isAcceptingMessages={isAcceptingMessages} />
 			</TabsContent>
-			<TabsContent value='sent-by-me' className='grid gap-4'>
+			<TabsContent value='sent-by-me' className='grid gap-4 mb-8'>
 				<MessagesSentByMeList messagesSentByMe={messagesSentByMe} userData={userData} />
 			</TabsContent>
 		</Tabs>

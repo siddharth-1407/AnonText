@@ -18,11 +18,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
+	
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<AuthProvider>
+		<AuthProvider >
 			<html lang='en'>
 				<body className={`${inter.className} min-h-screen flex flex-col dark:bg-gray-950 overflow-hidden overflow-y-scroll`}>
 					<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>

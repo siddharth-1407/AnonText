@@ -35,7 +35,7 @@ export default function MessageCard({ data, user }: MessageCardProp): React.JSX.
 					</Link>
 				)}
 			</CardHeader>
-			<CardContent className='ml-14'>{data.content}</CardContent>
+			<CardContent className='ml-14 whitespace-pre'>{data.content}</CardContent>
 			<Separator />
 			<CardFooter className='flex p-0 '>
 				{data?.reply ? (

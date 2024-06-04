@@ -20,7 +20,7 @@ export default function SentByMeCard({ data, user }: { data: any; user: any }) {
 				</Link>
 				{data?.isAnonymous && <Badge className='-translate-y-1 pb-0.5 text-xs'>Anonymous</Badge>}
 			</CardHeader>
-			<CardContent className='ml-14'>{data.content}</CardContent>
+			<CardContent className='ml-14 whitespace-pre'>{data.content}</CardContent>
 			{data?.reply && <Separator />}
 			<CardFooter className='flex p-0 '>
 				{data?.reply && (

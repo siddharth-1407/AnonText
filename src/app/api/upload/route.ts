@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 	const buffer = Buffer.from(bytes);
 	const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
 	const filename = uniqueSuffix;
-	const filePath = `./public/temp/${filename}`;
+	const filePath = `./public/tmp/${filename}`;
 	await writeFile(filePath, buffer, (err) => {
 		if (err) throw err;
 		return Response.json({ success: false, message: 'Error uploading file' });
