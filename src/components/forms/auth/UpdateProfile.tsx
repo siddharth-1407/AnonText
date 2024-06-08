@@ -43,13 +43,14 @@ export default function UpdateProfile({ userData }: { userData: any }) {
 		setIsSubmitting(true);
 		try {
 			let uploadImage;
+			const formData = new FormData();
 			if (data.avatar?.length) {
-				uploadImage = await uploadImageToLocalDir(data.avatar?.[0]);
-				if (!uploadImage?.success) {
-					toast({ title: 'Error updating profile', variant: 'destructive' });
-				}
+				formData.append('avatar', data.avatar?.[0]);
 			}
-			const res = await axios.patch('/api/update-profile', { avatar: uploadImage?.localPath || '', status: data.status });
+			if (data?.status) {
+				formData.append('status', data?.status);
+			}
+			const res = await axios.patch('/api/update-profile', formData);
 			if (res?.data?.success) {
 				router.refresh();
 				toast({ title: 'Profile updated!' });

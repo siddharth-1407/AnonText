@@ -4,6 +4,7 @@ import MessageModel, { Message } from '@/model/Message.model';
 import { messageSchema } from '@/Schemas/message.schema';
 import { User, getServerSession } from 'next-auth';
 import authOptions from '../auth/[...nextauth]/options';
+import { revalidatePath } from 'next/cache';
 
 export async function POST(request: Request) {
 	await dbConnect();
