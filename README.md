@@ -15,6 +15,13 @@ AnonText is a unique messaging platform designed to foster open communication an
 - **Fully responsive**
 
 
+## Screenshots
+
+![App Screenshot](https://anon-text.vercel.app/_next/image?url=%2Fhome%2Fsmall%2Fprofile_is_accepting_messages_small-dark.jpg&w=1080&q=75)
+
+![App Screenshot](https://anon-text.vercel.app/_next/image?url=%2Fhome%2Fsmall%2Fdashboard_small-dark.jpg&w=1080&q=100)
+
+
 ## Tech Stack
 
 Next.js, Typescript, MongoDB, Tailwind, ShadCN, Aceternity UI, Cloudinary, React email, Resend and Framer Motion.
@@ -82,4 +89,5 @@ Start the server
 ## Feedback
 
 If you have any feedback, please reach out to us at sanksiddharth@gmail.com
+
 
