@@ -32,6 +32,7 @@ Next.js, Typescript, MongoDB, Tailwind, ShadCN, Aceternity UI, Cloudinary, React
 
 Check out the live version of this project [here](https://anon-text.vercel.app).
 
+*There is no search feature on the app; therefore, users are expected to share their profile links to start receiving messages. Here is my [profile link](https://anon-text.vercel.app/p/siddharth) on this app for anyone who wants to test it. After sending a message, you can head to the "sent by me" tab to look at all the messages you've sent me.*
 
 
 ## Environment Variables
